@@ -44,20 +44,20 @@
 		</div>
 		<h3>Recent Subjects</h3>
 		<ul class="subjects">
-		<% Enquiry.project_counts.each do |project| %>
-			<li><a href="<%= reporting_enquiries_path(:project => project.name) %>" class="project important"><%= project %></a> (<%= hours_for(project) %>)</li>
+		<% Enquiry.subject_counts.each do |subject| %>
+			<li><a href="<%= reporting_enquiries_path(:subject => subject.name) %>" class="subject important"><%= subject %></a> (<%= hours_for(subject) %>)</li>
 		<% end %>
 		</ul>
 		
 		<h3>Recent Clients</h3>
-		<ul class="projects">
+		<ul class="subjects">
 		<% Enquiry.client_counts.each do |client| %>
 			<li><a href="<%= reporting_enquiries_path(:client => client.name) %>" class="client important"><%= client %></a> (<%= hours_for(client) %>)</li>
 		<% end %>
 		</ul>
 		
 		<h3>Recent Actions</h3>
-		<ul class="projects">
+		<ul class="subjects">
 		<% Enquiry.action_counts.each do |action| %>
 			<li><a href="<%= reporting_enquiries_path(:act => action.name) %>" class="action important"><%= action %></a> (<%= hours_for(action) %>)</li>
 		<% end %>
@@ -67,7 +67,7 @@
 	<div class="grid_12" id="footer">
 		Based on Punchy which was created by <a href="http://www.mazondo.com">Ryan Quinn</a>
 		<br />
-		<a href="http://www.opensourcerails.com/projects/607989-Punchy" title="Open Source Rails">See Punchy on Open Source Rails</a> | <a href="http://www.github.com/katel/Reffy">Reffy on Github</a>
+		<a href="http://www.opensourcerails.com/subjects/607989-Punchy" title="Open Source Rails">See Punchy on Open Source Rails</a> | <a href="http://www.github.com/katel/Reffy">Reffy on Github</a>
 		
 	</div>
 </div>

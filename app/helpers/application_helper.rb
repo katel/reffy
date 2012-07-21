@@ -1,7 +1,7 @@
 module ApplicationHelper
 	
-	def hours_for(project)
-  	minutes = Enquiry.tagged_with(project).since(1.month.ago).sum(:duration_in_minutes)
+	def hours_for(subject)
+  	minutes = Enquiry.tagged_with(subject).since(1.month.ago).sum(:duration_in_minutes)
   	return minutes_to_hours(minutes)
   	end
   	
@@ -51,18 +51,18 @@ module ApplicationHelper
 		return a.reverse
 	end
 	
-	#this is the highlight function for enquiries, making sure actions, projects and clients are highlighted
+	#this is the highlight function for enquiries, making sure actions, subjects and clients are highlighted
 	def highlight(enquiry)
 		b = enquiry.body.dup
-		b.gsub!(enquiry.project_reg) {|s| "<a href='#{reporting_enquiries_path(:project => s.gsub("\#", ''))}' class='important project'>" + s + '</a>'}
+		b.gsub!(enquiry.subject_reg) {|s| "<a href='#{reporting_enquiries_path(:subject => s.gsub("\#", ''))}' class='important subject'>" + s + '</a>'}
 		#need to use act instead of action to avoid messing up rails
 		b.gsub!(enquiry.action_reg) {|s| "<a href='#{reporting_enquiries_path(:act => s.gsub("*", ""))}' class='important action'>" + s + '</a>'}
 		b.gsub!(enquiry.client_reg) {|s| "<a href='#{reporting_enquiries_path(:client => s.gsub("@", ""))}' class='important client'>" + s + '</a>'}
 		b
 	end
 	
-	def reporting_path(action, project, client)
-		reporting_enquiries_path(:act => action, :project => project, :client => client)
+	def reporting_path(action, subject, client)
+		reporting_enquiries_path(:act => action, :subject => subject, :client => client)
 	end
 	
 	#need to generate a random color for the graphs, this could be better like specific colors for specific actions across the board, but this will do for now

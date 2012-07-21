@@ -16,7 +16,7 @@
 
 
 #header {
-	background: url(/assets/text_icon.png) no-repeat left center;
+	background: url(/assets/ask.png) no-repeat left center;
 	
 	padding: 2em 0;
 	margin-bottom: 1em;
@@ -25,7 +25,7 @@
 	text-decoration: none;
 	color: #202020;
 	padding: 10px;
-	padding-left: 55px;
+	margin-left: 85px;
 }
 
 #header h1 a:hover {
@@ -107,7 +107,7 @@ a img {
 	left: 0;
 }
 
-/*------------------------------------------Actions - Projects - Clients -----------------------------*/
+/*------------------------------------------Actions - Subjects - Clients -----------------------------*/
 
 .important {
 	padding: 2px 5px;
@@ -141,7 +141,7 @@ h2.important a.home {
 	background: blue;
 }
 
-.project {
+.subject {
 	background: red;
 }
 
@@ -154,7 +154,7 @@ h2.important a.home {
 	text-decoration: none;
 }
 
-.project:hover {
+.subject:hover {
 	background: darkred;
 	text-decoration: none;
 }
