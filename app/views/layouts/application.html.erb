@@ -56,10 +56,10 @@
 		<% end %>
 		</ul>
 		
-		<h3>Recent Actions</h3>
+		<h3>Recent Types</h3>
 		<ul class="subjects">
-		<% Enquiry.action_counts.each do |action| %>
-			<li><a href="<%= reporting_enquiries_path(:act => action.name) %>" class="action important"><%= action %></a> (<%= hours_for(action) %>)</li>
+		<% Enquiry.type_counts.each do |type| %>
+			<li><a href="<%= reporting_enquiries_path(:act => type.name) %>" class="type important"><%= type %></a> (<%= hours_for(type) %>)</li>
 		<% end %>
 		</ul>
 	</div>

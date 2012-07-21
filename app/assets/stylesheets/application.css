@@ -120,7 +120,7 @@ a img {
 }
 
 
-/*------------------------------------------Actions - Subjects - Patrons -----------------------------*/
+/*------------------------------------------Types - Subjects - Patrons -----------------------------*/
 
 .important {
 	padding: 2px 5px;
@@ -150,7 +150,7 @@ h2.important a.home {
 	background-position: left center;
 }
 
-.action {
+.type {
 	background:#45ADA8;
 }
 
@@ -163,7 +163,7 @@ h2.important a.home {
 	color: #555 !important;
 }
 
-.action a{
+.type a{
 	background: #547980;
 	text-decoration: none;
 

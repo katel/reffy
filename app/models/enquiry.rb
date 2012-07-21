@@ -1,5 +1,5 @@
 class Enquiry < ActiveRecord::Base
-	acts_as_taggable_on :subjects, :patrons, :actions
+	acts_as_taggable_on :subjects, :patrons, :types
 	
 	validates_presence_of :body
 	
@@ -25,7 +25,7 @@ class Enquiry < ActiveRecord::Base
 			self.duration_in_minutes = parse_for_time(body)
 			self.subject_list = parse_for_subjects(body)
 			self.patron_list = parse_for_patrons(body)
-			self.action_list = parse_for_actions(body)
+			self.type_list = parse_for_types(body)
 			self.save
 		end
 	end
@@ -34,7 +34,7 @@ class Enquiry < ActiveRecord::Base
 		/#\w+/
 	end
 	
-	def action_reg
+	def type_reg
 		/\*\w+/
 	end
 	
@@ -97,12 +97,12 @@ class Enquiry < ActiveRecord::Base
 		return patrons
 	end
 	
-	def parse_for_actions(text)
-		reg = action_reg
-		actions = text.scan(reg)
-		actions.each do |a|
+	def parse_for_types(text)
+		reg = type_reg
+		types = text.scan(reg)
+		types.each do |a|
 			a = a.gsub! "*", ""
 		end
-		return actions
+		return types
 	end
 end

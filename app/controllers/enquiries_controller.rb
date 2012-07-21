@@ -75,7 +75,7 @@ class EnquiriesController < ApplicationController
         format.html { redirect_to(enquiries_path, :notice => 'Enquiry was successfully created.') }
         format.xml  { render :xml => @enquiry, :status => :created, :location => @enquiry }
       else
-        format.html { render :action => "new" }
+        format.html { render :type => "new" }
         format.xml  { render :xml => @enquiry.errors, :status => :unprocessable_entity }
       end
     end
@@ -92,7 +92,7 @@ class EnquiriesController < ApplicationController
         format.html { redirect_to(enquiries_path, :notice => 'Enquiry was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :type => "edit" }
         format.xml  { render :xml => @enquiry.errors, :status => :unprocessable_entity }
       end
     end
@@ -123,11 +123,11 @@ class EnquiriesController < ApplicationController
 			@tags = Enquiry.patron_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
 		when "*"
 			term = params[:term].gsub("*", "")
-			@tags = Enquiry.action_counts.where("tags.name like ?", "%#{term}%").collect! {|a| "*" + a.name}
+			@tags = Enquiry.type_counts.where("tags.name like ?", "%#{term}%").collect! {|a| "*" + a.name}
 		else
 			term = params[:term]
 	  	@tags = Enquiry.subject_counts.where("tags.name like ?", "%#{term}%").collect! {|p| "\#" + p.name}
-	  	@tags << Enquiry.action_counts.where("tags.name like ?", "%#{term}%").collect! {|a| "*" + a.name}
+	  	@tags << Enquiry.type_counts.where("tags.name like ?", "%#{term}%").collect! {|a| "*" + a.name}
 	  	@tags << Enquiry.patron_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
   		end
   		@tags.flatten!
