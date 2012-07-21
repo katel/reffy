@@ -15,10 +15,11 @@
 
 
     <%= f.text_field :body, :class => "new_enquiry", :id => "autocomplete_enquiries" %>
-    <%= f.submit "Record enquiry", :class => "small radius button" %>
-    <div>
-    <a href="#" id="show_advanced_menu">Advanced Menu</a>
-    <span class="information">Ex: *Email enquiry for 1 hour for a @student about #medicine</span>
+    <%= f.submit "Record enquiry", :class => "medium secondary button" %>
+
+    <div class="info">
+    <a href="#" id="show_advanced_menu" class="button">Advanced Menu</a>
+    <span class="information"><p>Ex: *Email enquiry for 1 hour for a @student about #medicine</p></span>
     </div>
     <div id="advanced_menu">
     <b>Date:</b> <%= f.text_field :created_at, :id => "enquiry_date" %>

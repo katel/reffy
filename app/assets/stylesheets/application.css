@@ -13,6 +13,18 @@
 
 */
 
+/* Colour scheme info 
+
+Nav-bar 594f4f
+Enquiry type 45ada8
+Subjects 9de0ad
+Patrons e5fcc2
+
+Other 547980
+http://www.colourlovers.com/palette/443995/i_demand_a_pancake
+
+*/
+
 
 
 #header {
@@ -33,15 +45,14 @@
 }
 
 
-x
+.nav-bar {
+	
+background: none repeat scroll 0 0 #594F4F !important;
+
+}
 
 #footer {
-	clear: both;
-	padding: 20px;
-	text-align: right;
-	font-size: .75em;
-		 background-image:url(/assets/grid_noise.png);
-		height: 200px;
+
 }
 
 a {
@@ -94,18 +105,20 @@ a img {
 }
 
 .today {
-	background: #B9D3EE	;
+	background: #547980	;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
+	color: #fff !important;
 }
 
 .enquiry_control {
-	position: absolute;
+
 	padding: 2px 5px;
 	bottom: 0;
 	left: 0;
 }
+
 
 /*------------------------------------------Actions - Subjects - Patrons -----------------------------*/
 
@@ -116,7 +129,7 @@ a img {
 	-webkit-border-radius: 5px;
 	color: #fff;
 	text-decoration: none;
-	background: #161616;
+	background: #45ADA8;
 }
 
 h2.important {
@@ -132,29 +145,31 @@ h2.important a {
 h2.important a.home {
 	text-indent: -999999px;
 	padding-left: 35px;
-	background-image: url(../images/home.png);
+	background-image: url(/assets/home.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
 
 .action {
-	background: blue;
+	background:#45ADA8;
 }
 
 .subject {
-	background: red;
+	background: #9DE0AD;
 }
 
-.patron {
-	background: green;
+.patron  {
+	background: #E5FCC2;
+	color: #555 !important;
 }
 
-.action: {
-	background: darkblue;
+.action a{
+	background: #547980;
 	text-decoration: none;
+
 }
 
-.subject:hover {
+/*.subject:hover {
 	background: darkred;
 	text-decoration: none;
 }
@@ -162,7 +177,7 @@ h2.important a.home {
 .patron:hover {
 	background: darkgreen;
 	text-decoration: none;
-}
+}*/
 
 /*--------------------------------Reporting-----------------------------------*/
 .reporting_filters li {
@@ -180,7 +195,7 @@ h2.important a.home {
 
 .reporting_filters a {
 	padding-right:20px;
-	background-image: url(../images/arrow_down.png);
+	background-image: url(/assets//arrow_down.png);
 	background-repeat: no-repeat;
 	background-position: right center;
 }
