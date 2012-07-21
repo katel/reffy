@@ -34,7 +34,7 @@
 		<br />
 		#subject
 		<br />
-		@client
+		@patron
 		<h4>Time Formats</h4>
 		30 minutes
 		<br />
@@ -49,10 +49,10 @@
 		<% end %>
 		</ul>
 		
-		<h3>Recent Clients</h3>
+		<h3>Recent Patrons</h3>
 		<ul class="subjects">
-		<% Enquiry.client_counts.each do |client| %>
-			<li><a href="<%= reporting_enquiries_path(:client => client.name) %>" class="client important"><%= client %></a> (<%= hours_for(client) %>)</li>
+		<% Enquiry.patron_counts.each do |patron| %>
+			<li><a href="<%= reporting_enquiries_path(:patron => patron.name) %>" class="patron important"><%= patron %></a> (<%= hours_for(patron) %>)</li>
 		<% end %>
 		</ul>
 		

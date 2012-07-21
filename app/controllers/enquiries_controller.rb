@@ -120,7 +120,7 @@ class EnquiriesController < ApplicationController
 			@tags = Enquiry.subject_counts.where("tags.name like ?", "%#{term}%").collect! {|p| "\#" + p.name}
 		when "@"
 			term = params[:term].gsub("@", "")
-			@tags = Enquiry.client_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
+			@tags = Enquiry.patron_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
 		when "*"
 			term = params[:term].gsub("*", "")
 			@tags = Enquiry.action_counts.where("tags.name like ?", "%#{term}%").collect! {|a| "*" + a.name}
@@ -128,7 +128,7 @@ class EnquiriesController < ApplicationController
 			term = params[:term]
 	  	@tags = Enquiry.subject_counts.where("tags.name like ?", "%#{term}%").collect! {|p| "\#" + p.name}
 	  	@tags << Enquiry.action_counts.where("tags.name like ?", "%#{term}%").collect! {|a| "*" + a.name}
-	  	@tags << Enquiry.client_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
+	  	@tags << Enquiry.patron_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
   		end
   		@tags.flatten!
   	end

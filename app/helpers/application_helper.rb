@@ -18,12 +18,12 @@ module ApplicationHelper
   		return output.html_safe
   	end
 	
-	def six_month_client_action_chart(client)
+	def six_month_patron_action_chart(patron)
 		require 'google_chart'
-		enquiries = Enquiry.tagged_with(client, :as => :client)
+		enquiries = Enquiry.tagged_with(patron, :as => :patron)
 		GoogleChart::LineChart.new('550x200', "", false) do |lc|
 		  enquiries.tag_counts_on(:actions).each do |a|
-	      	lc.data a, six_months_of_action_for_client(a, client), random_color
+	      	lc.data a, six_months_of_action_for_patron(a, patron), random_color
       	  end
 	      lc.show_legend = true
 	      #lc.axis :y, :range => [0, 300], :color => '202020', :font_size => 16, :alignment => :center #can't get this to work, deactivate for now
@@ -33,10 +33,10 @@ module ApplicationHelper
 	    end
 	end
 	
-	def six_months_of_action_for_client(action, client)
+	def six_months_of_action_for_patron(action, patron)
 		a = Array.new
 		(0..5).each do |n|
-			number = Enquiry.months_ago(n).tagged_with(client, :as => :client).tagged_with(action, :as => :action).sum(:duration_in_minutes)
+			number = Enquiry.months_ago(n).tagged_with(patron, :as => :patron).tagged_with(action, :as => :action).sum(:duration_in_minutes)
 			number = number / 60 #convert it to hours
 			a << number
 		end
@@ -51,18 +51,18 @@ module ApplicationHelper
 		return a.reverse
 	end
 	
-	#this is the highlight function for enquiries, making sure actions, subjects and clients are highlighted
+	#this is the highlight function for enquiries, making sure actions, subjects and patrons are highlighted
 	def highlight(enquiry)
 		b = enquiry.body.dup
 		b.gsub!(enquiry.subject_reg) {|s| "<a href='#{reporting_enquiries_path(:subject => s.gsub("\#", ''))}' class='important subject'>" + s + '</a>'}
 		#need to use act instead of action to avoid messing up rails
 		b.gsub!(enquiry.action_reg) {|s| "<a href='#{reporting_enquiries_path(:act => s.gsub("*", ""))}' class='important action'>" + s + '</a>'}
-		b.gsub!(enquiry.client_reg) {|s| "<a href='#{reporting_enquiries_path(:client => s.gsub("@", ""))}' class='important client'>" + s + '</a>'}
+		b.gsub!(enquiry.patron_reg) {|s| "<a href='#{reporting_enquiries_path(:patron => s.gsub("@", ""))}' class='important patron'>" + s + '</a>'}
 		b
 	end
 	
-	def reporting_path(action, subject, client)
-		reporting_enquiries_path(:act => action, :subject => subject, :client => client)
+	def reporting_path(action, subject, patron)
+		reporting_enquiries_path(:act => action, :subject => subject, :patron => patron)
 	end
 	
 	#need to generate a random color for the graphs, this could be better like specific colors for specific actions across the board, but this will do for now

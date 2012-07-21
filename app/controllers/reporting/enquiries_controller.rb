@@ -39,8 +39,8 @@ class Reporting::EnquiriesController < ApplicationController
     if params[:act]
     	@enquiries = @enquiries.tagged_with(params[:act], :as => :action)
 	end
-	if params[:client]
-		@enquiries = @enquiries.tagged_with(params[:client], :as => :client)
+	if params[:patron]
+		@enquiries = @enquiries.tagged_with(params[:patron], :as => :patron)
 	end
 	if params[:subject]
 		@enquiries = @enquiries.tagged_with(params[:subject], :as => :subject)
@@ -133,7 +133,7 @@ class Reporting::EnquiriesController < ApplicationController
 			@tags = Enquiry.subject_counts.where("tags.name like ?", "%#{term}%").collect! {|p| "\#" + p.name}
 		when "@"
 			term = params[:term].gsub("@", "")
-			@tags = Enquiry.client_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
+			@tags = Enquiry.patron_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
 		when "*"
 			term = params[:term].gsub("*", "")
 			@tags = Enquiry.action_counts.where("tags.name like ?", "%#{term}%").collect! {|a| "*" + a.name}
@@ -141,7 +141,7 @@ class Reporting::EnquiriesController < ApplicationController
 			term = params[:term]
 	  	@tags = Enquiry.subject_counts.where("tags.name like ?", "%#{term}%").collect! {|p| "\#" + p.name}
 	  	@tags << Enquiry.action_counts.where("tags.name like ?", "%#{term}%").collect! {|a| "*" + a.name}
-	  	@tags << Enquiry.client_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
+	  	@tags << Enquiry.patron_counts.where("tags.name like ?", "%#{term}%").collect! {|c| "@" + c.name}
   		end
   		@tags.flatten!
   	end

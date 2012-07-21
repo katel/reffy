@@ -61,7 +61,8 @@ a img {
 /*-------------------------------------------Enquiries-----------------------------------------*/
 
 #new_enquiry {
-	position: relative;
+	margin-bottom: 1em;
+	padding:  1em 0;
 }
 
 #advanced_menu {
@@ -85,7 +86,6 @@ a img {
 	margin: 10px 0;
 	padding: 10px;
 	border-bottom: 1px solid #e8e8e8;
-	position: relative;
 }
 .enquiry p {
 	margin: 5px 0;
@@ -107,7 +107,7 @@ a img {
 	left: 0;
 }
 
-/*------------------------------------------Actions - Subjects - Clients -----------------------------*/
+/*------------------------------------------Actions - Subjects - Patrons -----------------------------*/
 
 .important {
 	padding: 2px 5px;
@@ -145,7 +145,7 @@ h2.important a.home {
 	background: red;
 }
 
-.client {
+.patron {
 	background: green;
 }
 
@@ -159,7 +159,7 @@ h2.important a.home {
 	text-decoration: none;
 }
 
-.client:hover {
+.patron:hover {
 	background: darkgreen;
 	text-decoration: none;
 }

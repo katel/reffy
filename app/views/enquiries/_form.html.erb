@@ -1,3 +1,4 @@
+
 <div id="new_enquiry">
 <%= form_for(@enquiry) do |f| %>
   <% if @enquiry.errors.any? %>
@@ -14,7 +15,7 @@
 
 
     <%= f.text_field :body, :class => "new_enquiry", :id => "autocomplete_enquiries" %>
-    <%= f.submit "Record enquiry", :class => "submit" %>
+    <%= f.submit "Record enquiry", :class => "small radius button" %>
     <div>
     <a href="#" id="show_advanced_menu">Advanced Menu</a>
     <span class="information">Ex: *Email enquiry for 1 hour for a @student about #medicine</span>
