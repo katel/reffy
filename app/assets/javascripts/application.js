@@ -1,5 +1,15 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+// This is a manifest file that'll be compiled into including all the files listed below.
+// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
+// be included in the compiled file accessible from http://example.com/assets/application.js
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+//= require jquery
+//= require jquery-1.4.2.min
+//= require jquery_ujs
+//= require rails
+//= require_tree .
+
 jQuery.ajaxSetup({ 
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
@@ -11,21 +21,21 @@ $(function() {
 		function extractLast(term) {
 			return split(term).pop();
 		}
-		//this is the autocomplete for the enquiry field
+		//this is the autocomplete for the punch field
 		$("#autocomplete_enquiries").autocomplete({
 			source: function(request, response) {
 				$.getJSON("/enquiries/autocomplete", {
 					term: extractLast(request.term)
 				}, response);
 			},
-			
+
 			minLength: 1,
-			
+
 			focus: function() {
 				// prevent value inserted on focus
 				return false;
 			},
-			
+
 			select: function(event, ui) {
 				var terms = split( this.value );
 				// remove the current input
@@ -38,24 +48,24 @@ $(function() {
 				return false;
 			}
 		});
-		
-		//this is the datepicker for the advanced enquiries menu
-		$("#enquiry_date").datepicker({
+
+		//this is the datepicker for the advanced punches menu
+		$("#enquiries_date").datepicker({
 			dateFormat: "DD, MM d, yy"
 		});
-		
+
 		//this is the toggle for the advanced menu
 		$("#show_advanced_menu").click(function() {
 			$("#advanced_menu").toggle("blind", 500);
 		});
-		
+
 		//only hide the menu if javascript is enabled
 		$("#advanced_menu").hide();
-		
-		//this loads more enquiries via js
+
+		//this loads more punches via js
 		Page.makeMoreLink();
 	});
-	
+
 
 var Page = {
 	makeMoreLink: function() {

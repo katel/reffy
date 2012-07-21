@@ -1,12 +1,24 @@
-==Welcome to Punchy!
+==Reffy
+
+A fork of Jay Godse's Punchy! app modified to work for library reference enquiries. Enquiries are now enquiries. Instead of: 
+*action
+#project
+@client
+
+Reffy uses: 
+*action (should this be method)
+#subject
+@type (of enquiry)
+
+==Welcome to Reffy!
 
 Punchy is a super simple, straight forward rails 3.0 app that allows you to keep track of what you've been working on.
 
 ==How it works
 
-The premise is simple: setting up projects and clients sucks.  No drop down menus, one button, nothing else.  You can begin logging your work within seconds.  To input a new time punch, simply type in something to the effect of "*programmed for @client_1 for 4 hours on #project_1"  Anything starting with a "*" is recorded as an action, "#" is recorded as a project and "@" is recorded as a client.
+The premise is simple: setting up projects and clients sucks.  No drop down menus, one button, nothing else.  You can begin logging your work within seconds.  To input a new time enquiry, simply type in something to the effect of "*programmed for @client_1 for 4 hours on #project_1"  Anything starting with a "*" is recorded as an action, "#" is recorded as a project and "@" is recorded as a client.
 
-That's it!  Punchy will keep track of all the minutes you work and let you know where all your time is going!
+That's it!  It will keep track of all the minutes you work and let you know where all your time is going!
 
 ==Why?
 
@@ -25,7 +37,7 @@ and you're done, except the time zone defaults to UTC. Read the next section to 
 
 ==But the days are all messed up?
 
-Punchy is currently set to UTC.  If you live elsewhere, you'll need to run: 
+Enquiryy is currently set to UTC.  If you live elsewhere, you'll need to run: 
 
   rake time:zones:all 
 
@@ -42,7 +54,7 @@ Copyright (c) 2011 Jay Godse
 License: MIT - same as the one from Ryan Quinn below. 
 
 
-This app was derived from Ryan Quinn's Punchy, with the following license. 
+This app was derived from Ryan Quinn's Enquiryy, with the following license. 
 
  Copyright (c) 2011 Ryan Quinn
 

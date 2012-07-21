@@ -1,0 +1,454 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require '960'
+ *= require 'jquery-ui-1.8.2.custom'
+ *= require 'scaffold'
+
+*/
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+	color: #202020;
+}
+
+
+#header {
+	background: url(/assets/text_icon.png) no-repeat left center;
+	
+	padding: 2em 0;
+	margin-bottom: 1em;
+}
+#header h1 a{
+	text-decoration: none;
+	color: #202020;
+	padding: 10px;
+	padding-left: 55px;
+}
+
+#header h1 a:hover {
+	background-color: #f5f4ef;
+}
+
+#navigation {
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #777;
+	font-size:16px;
+	margin-bottom:10px;
+}
+
+#navigation li {
+	display: inline;
+	margin: 0;
+}
+
+#navigation a {
+	padding:2px 10px;
+	height:55px;
+	background: #777;
+	border-top:1px solid #777;
+	border-right: 1px solid #777;
+	border-left: 1px solid #777;
+	color: #fff;
+}
+
+#navigation.enquiries .enquiries, #navigation.reporting .reporting {
+	background: #fff;
+	color: #777;
+}
+
+#footer {
+	clear: both;
+	padding: 20px;
+	text-align: right;
+	font-size: .75em;
+		 background-image:url(/assets/grid_noise.png);
+		height: 200px;
+}
+
+a {
+	text-decoration: none;
+	color: #e98115;
+	border: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a img {
+	border: none;
+}
+
+/*-------------------------------------------Enquiries-----------------------------------------*/
+
+#new_enquiry {
+	position: relative;
+}
+
+#advanced_menu {
+	background: #e8e8e8;
+	padding: 5px;
+}
+
+#show_advanced_menu {
+	float: right;
+	font-size: .8em;
+	padding: 2px 5px;
+}
+.date {
+	font-style: italic;
+	color: #777;
+	text-align: right;
+	font-size: .9em;
+}
+
+.enquiry {
+	margin: 10px 0;
+	padding: 10px;
+	border-bottom: 1px solid #e8e8e8;
+	position: relative;
+}
+.enquiry p {
+	margin: 5px 0;
+	padding: 0;
+	line-height: 1.5em;
+}
+
+.today {
+	background: #B9D3EE	;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.enquiry_control {
+	position: absolute;
+	padding: 2px 5px;
+	bottom: 0;
+	left: 0;
+}
+
+/*------------------------------------------Actions - Projects - Clients -----------------------------*/
+
+.important {
+	padding: 2px 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+	background: #161616;
+}
+
+h2.important {
+	display: inline;
+	margin: 0px 2px;
+}
+
+h2.important a {
+	text-decoration: none;
+	color: #fff;
+}
+
+h2.important a.home {
+	text-indent: -999999px;
+	padding-left: 35px;
+	background-image: url(../images/home.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.action {
+	background: blue;
+}
+
+.project {
+	background: red;
+}
+
+.client {
+	background: green;
+}
+
+.action: {
+	background: darkblue;
+	text-decoration: none;
+}
+
+.project:hover {
+	background: darkred;
+	text-decoration: none;
+}
+
+.client:hover {
+	background: darkgreen;
+	text-decoration: none;
+}
+
+/*--------------------------------Reporting-----------------------------------*/
+.reporting_filters li {
+	float: left;
+	position:relative;
+}
+
+.reporting_filters li ul {
+	display:none;
+}
+
+.reporting_filters li.hover ul, .reporting_filters li:hover ul {
+	display:inline;
+}
+
+.reporting_filters a {
+	padding-right:20px;
+	background-image: url(../images/arrow_down.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+
+.drop_down {
+	margin:0;
+	padding:0;
+	z-index:1000;
+	position:absolute;
+	list-style:none;
+	display:inline;
+}
+
+.drop_down li {
+	float:none;
+	overflow:hidden;
+	margin:0;
+}
+
+.drop_down a {
+	background-image: none;
+	color:#fff;
+	display:block;
+	padding:2px 5px;
+	border-bottom:1px solid #161616;
+}
+
+#hours_breakdown {
+	clear:both;
+	position:relative;
+	display:block;
+	padding-top:25px;
+	padding-bottom:25px;
+	margin: 25px auto;
+}
+
+#hours_breakdown h2 {
+	font-size: 1.25em;
+}
+
+#hours_breakdown .section {
+	display:block;
+	float:left;
+	padding:10px;
+	text-align:center;
+	text-transform:uppercase;
+	width:30%;
+	border-bottom:1px solid #777;
+}
+
+#hours_breakdown .right {
+	border-left: 1px solid #777;
+}
+
+#hours_breakdown .left {
+	border-right: 1px solid #777;
+}
+/*--------------------------------Text Manipulators-------------------------------------*/
+
+span.information {
+	font-size: .75em;
+	color: #777;
+}
+
+input.submit {
+	padding: 5px;
+	width: 150px;
+	color: #fff;
+	background: #202020;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #161616;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+input.submit:hover {
+	background: #161616;
+}
+
+input.new_enquiry {
+	display: inline;
+	padding: 5px;
+	width: 450px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 5px;
+}
+
+li {
+	margin: 5px;
+	padding: 0;
+}
+
+.time {
+	font-style: italic;
+	font-weight: bolder;
+	padding: 2px 5px;
+}
+
+td.hours {
+	text-align: center;
+}
+
+.h {
+	font-size: .75em;
+	color: #444;
+	font-style: normal;
+	margin: 0 2px;
+}
+
+.m {
+	font-size: .75em;
+	color: #444;
+	font-style: normal;
+	margin: 0 2px;
+}
+div.key {
+	width: 200px;
+	border: 1px solid #B9D3EE;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #f5f4ef;
+	padding: 10px;
+}
+
+div.key h4 {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+th {
+	font-weight: lighter;
+	font-size: .65em;
+	text-transform: uppercase;
+	color: #777;
+	border-bottom: 1px solid #777;
+}
+
+table {
+	margin-top: 10px;
+}
+
+td.title {
+	text-align: center;
+}
+
+td {
+	padding: 5px;
+}
+tr.even {
+	background: #e8e8e8;
+}
+
+td.final {
+	border-top: 1px solid #777;
+}
+
+/*-------------------------New Users-------------------------*/
+.empty_state {
+	background: #f9f9df;
+	border: 5px solid #e8e8e8;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.empty_state h2 {
+	margin: 5px;
+}
+
+.empty_state img {
+	border: 2px solid #777;
+	width: 90%;
+}
+
+/*------------------------Pagination------------------------*/
+.pagination {
+  text-align: right;
+  padding: .3em; }
+  .pagination a, .pagination span {
+    padding: .2em .5em; }
+  .pagination span.disabled {
+    color: #AAA; }
+  .pagination span.current {
+    font-weight: bold;
+    color: #FF0084; }
+  .pagination a {
+    border: 1px solid #DDDDDD;
+    color: #0063DC;
+    text-decoration: none; }
+    .pagination a:hover, .pagination a:focus {
+      border-color: #003366;
+      background: #0063DC;
+      color: white; }
+  .pagination .page_info {
+    color: #aaa;
+    padding-top: .8em; }
+  .pagination .prev_page, .pagination .next_page {
+    border-width: 2px; }
+  .pagination .prev_page {
+    margin-right: 1em; }
+  .pagination .next_page {
+    margin-left: 1em; }
+    
+a.more_button {
+	padding: 5px;
+	display: block;
+	background: #fff;
+	border: 2px solid #e98115;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-align: center;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+a.more_button:hover {
+	background-color: #e98115;
+	border-color: #e98115;
+	color: #fff;
+}
+
+div.enquiries_loader {
+	background: #e98115 url(/assets/ajax-loader-white.gif) no-repeat 60% center;
+	display: block;
+	border: 2px solid #e98115;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 5px;
+	color: #fff;
+	text-align:center;
+}

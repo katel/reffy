@@ -1,0 +1,7 @@
+$(".end_of_enquiries").before("<%= escape_javascript(render @enquiries) %>");
+<% if @enquiries.next_page %>
+	$(".end_of_enquiries").html("<%= escape_javascript(link_to("More Enquiries", enquiries_path(:page => @enquiries.next_page), :rel => "more_button", :class => "more_button")) %>");
+	Page.makeMoreLink();
+<% else %>
+	$(".end_of_enquiries").html("");
+<% end %>

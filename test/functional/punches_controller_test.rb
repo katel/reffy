@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class PunchesControllerTest < ActionController::TestCase
+class EnquiriesControllerTest < ActionController::TestCase
   setup do
-    @punch = punches(:one)
+    @enquiry = enquiries(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:punches)
+    assert_not_nil assigns(:enquiries)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class PunchesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create punch" do
-    assert_difference('Punch.count') do
-      post :create, :punch => @punch.attributes
+  test "should create enquiry" do
+    assert_difference('Enquiry.count') do
+      post :create, :enquiry => @enquiry.attributes
     end
 
-    assert_redirected_to punches_path
+    assert_redirected_to enquiries_path
   end
 
-  test "should show punch" do
-    get :show, :id => @punch.to_param
+  test "should show enquiry" do
+    get :show, :id => @enquiry.to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => @punch.to_param
+    get :edit, :id => @enquiry.to_param
     assert_response :success
   end
 
-  test "should update punch" do
-    put :update, :id => @punch.to_param, :punch => @punch.attributes
-    assert_redirected_to punches_path
+  test "should update enquiry" do
+    put :update, :id => @enquiry.to_param, :enquiry => @enquiry.attributes
+    assert_redirected_to enquiries_path
   end
 
-  test "should destroy punch" do
-    assert_difference('Punch.count', -1) do
-      delete :destroy, :id => @punch.to_param
+  test "should destroy enquiry" do
+    assert_difference('Enquiry.count', -1) do
+      delete :destroy, :id => @enquiry.to_param
     end
 
-    assert_redirected_to punches_path
+    assert_redirected_to enquiries_path
   end
 end

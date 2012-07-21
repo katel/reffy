@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 ###############################################
-# Punchy
-# Please submit bug reports/suggestions via the github repo http://github.com/mazondo/Punchy
+# Enquiryy
+# Please submit bug reports/suggestions via the github repo http://github.com/mazondo/Enquiryy
 # 
 # Copyright (c) 2010 Ryan Quinn
 # 

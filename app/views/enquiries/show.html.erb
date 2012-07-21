@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @enquiry.body %>
+</p>
+
+<p>
+  <b>Duration in minutes:</b>
+  <%= @enquiry.duration_in_minutes %>
+</p>
+
+<b>Projects: </b> <%= @enquiry.project_list.to_s %>
+<br />
+<b>Actions: </b> <%= @enquiry.action_list.to_s %>
+<br />
+<b>Clients: </b> <%= @enquiry.client_list.to_s %>
+<br />
+
+
+<%= link_to 'Edit', edit_enquiry_path(@enquiry) %> |
+<%= link_to 'Back', enquiries_path %>

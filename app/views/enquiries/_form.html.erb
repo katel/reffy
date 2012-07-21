@@ -1,0 +1,26 @@
+<div id="new_enquiry">
+<%= form_for(@enquiry) do |f| %>
+  <% if @enquiry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enquiry.errors.count, "error") %> prohibited this enquiry from being saved:</h2>
+
+      <ul>
+      <% @enquiry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= f.text_field :body, :class => "new_enquiry", :id => "autocomplete_enquiries" %>
+    <%= f.submit "Record enquiry", :class => "submit" %>
+    <div>
+    <a href="#" id="show_advanced_menu">Advanced Menu</a>
+    <span class="information">Ex: *Email enquiry for 1 hour for a @student about #medicine</span>
+    </div>
+    <div id="advanced_menu">
+    <b>Date:</b> <%= f.text_field :created_at, :id => "enquiry_date" %>
+    </div>
+<% end %>
+</div>

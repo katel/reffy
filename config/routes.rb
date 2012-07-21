@@ -1,18 +1,18 @@
 Timish::Application.routes.draw do
 
-  resources :punches do
+  resources :enquiries do
   	collection do
   		get :autocomplete
   	end
   end
   
   namespace :reporting do
-  	resources :punches
-  	match 'timeline' => 'punches#timeline'
-  	root :to => 'punches#index'
+  	resources :enquiries
+  	match 'timeline' => 'enquiries#timeline'
+  	root :to => 'enquiries#index'
   end
   
-  root :to => "punches#index"
+  root :to => "enquiries#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
