@@ -1,28 +1,24 @@
 ==Reffy
 
-A fork of Jay Godse's Punchy! app modified to work for library reference enquiries. Enquiries are now enquiries. Instead of: 
+Reffy is a fork of Punchy, repurposed to keep track of library enquiries. 
+
+And, like with Punchy, the premise is simple: keeping a record of enquiries in the library sucks.  No drop down menus, one button, nothing else.  You can begin logging your enquiries seconds.  To input a new enquiry, simply type in something to the effect of "*email enquiry for @student for 4 hours on #topic"  Anything starting with a "*" is recorded as an action, "#" is recorded as a project and "@" is recorded as a client.
+
+That's it!  Punchy will keep track of all the minutes you work and let you know where all your time is going!
+
+A fork of Jay Godse's Punchy! app modified to work for library reference enquiries. Punches are now enquiries. Instead of: 
 *action
 #project
 @client
 
 Reffy uses: 
-*action (should this be method)
+*enquiry type/method
 #subject
-@type (of enquiry)
+@user
 
-==Welcome to Reffy!
+==Background
 
-Punchy is a super simple, straight forward rails 3.0 app that allows you to keep track of what you've been working on.
-
-==How it works
-
-The premise is simple: setting up projects and clients sucks.  No drop down menus, one button, nothing else.  You can begin logging your work within seconds.  To input a new time enquiry, simply type in something to the effect of "*programmed for @client_1 for 4 hours on #project_1"  Anything starting with a "*" is recorded as an action, "#" is recorded as a project and "@" is recorded as a client.
-
-That's it!  It will keep track of all the minutes you work and let you know where all your time is going!
-
-==Why?
-
-I developed Punchy so I could log the time I spend on various projects the way I choose to - with minimal interference in my day.  I prefer to work without interference and then log my time after the fact.
+Punchy was developed by Ryan Quinn as a super simple, straight forward rails 3.0 app that allows you to keep track of what you've been working on. 
 
 
 ==Deploying on Heroku
@@ -37,7 +33,7 @@ and you're done, except the time zone defaults to UTC. Read the next section to 
 
 ==But the days are all messed up?
 
-Enquiryy is currently set to UTC.  If you live elsewhere, you'll need to run: 
+Reffy is currently set to UTC.  If you live elsewhere, you'll need to run: 
 
   rake time:zones:all 
 

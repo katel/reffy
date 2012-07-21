@@ -7,6 +7,7 @@
 //= require jquery
 //= require jquery-1.4.2.min
 //= require jquery_ujs
+//= require foundation
 //= require rails
 //= require_tree .
 
@@ -21,7 +22,7 @@ $(function() {
 		function extractLast(term) {
 			return split(term).pop();
 		}
-		//this is the autocomplete for the punch field
+		//this is the autocomplete for the enquiry field
 		$("#autocomplete_enquiries").autocomplete({
 			source: function(request, response) {
 				$.getJSON("/enquiries/autocomplete", {
@@ -49,7 +50,7 @@ $(function() {
 			}
 		});
 
-		//this is the datepicker for the advanced punches menu
+		//this is the datepicker for the advanced enquiry menu
 		$("#enquiries_date").datepicker({
 			dateFormat: "DD, MM d, yy"
 		});
@@ -62,7 +63,7 @@ $(function() {
 		//only hide the menu if javascript is enabled
 		$("#advanced_menu").hide();
 
-		//this loads more punches via js
+		//this loads more enquiries via js
 		Page.makeMoreLink();
 	});
 

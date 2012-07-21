@@ -7,17 +7,12 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require '960'
+ *= require 'foundation'
  *= require 'jquery-ui-1.8.2.custom'
- *= require 'scaffold'
+
 
 */
 
-body {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-	color: #202020;
-}
 
 
 #header {
@@ -37,33 +32,8 @@ body {
 	background-color: #f5f4ef;
 }
 
-#navigation {
-	margin: 0;
-	padding: 0;
-	border-bottom: 1px solid #777;
-	font-size:16px;
-	margin-bottom:10px;
-}
 
-#navigation li {
-	display: inline;
-	margin: 0;
-}
-
-#navigation a {
-	padding:2px 10px;
-	height:55px;
-	background: #777;
-	border-top:1px solid #777;
-	border-right: 1px solid #777;
-	border-left: 1px solid #777;
-	color: #fff;
-}
-
-#navigation.enquiries .enquiries, #navigation.reporting .reporting {
-	background: #fff;
-	color: #777;
-}
+x
 
 #footer {
 	clear: both;
@@ -268,112 +238,6 @@ h2.important a.home {
 
 #hours_breakdown .left {
 	border-right: 1px solid #777;
-}
-/*--------------------------------Text Manipulators-------------------------------------*/
-
-span.information {
-	font-size: .75em;
-	color: #777;
-}
-
-input.submit {
-	padding: 5px;
-	width: 150px;
-	color: #fff;
-	background: #202020;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 1px solid #161616;
-	cursor: pointer;
-	font-weight: bold;
-}
-
-input.submit:hover {
-	background: #161616;
-}
-
-input.new_enquiry {
-	display: inline;
-	padding: 5px;
-	width: 450px;
-}
-
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 5px;
-}
-
-li {
-	margin: 5px;
-	padding: 0;
-}
-
-.time {
-	font-style: italic;
-	font-weight: bolder;
-	padding: 2px 5px;
-}
-
-td.hours {
-	text-align: center;
-}
-
-.h {
-	font-size: .75em;
-	color: #444;
-	font-style: normal;
-	margin: 0 2px;
-}
-
-.m {
-	font-size: .75em;
-	color: #444;
-	font-style: normal;
-	margin: 0 2px;
-}
-div.key {
-	width: 200px;
-	border: 1px solid #B9D3EE;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	background: #f5f4ef;
-	padding: 10px;
-}
-
-div.key h4 {
-	text-align: center;
-	margin: 0;
-	padding: 0;
-}
-
-th {
-	font-weight: lighter;
-	font-size: .65em;
-	text-transform: uppercase;
-	color: #777;
-	border-bottom: 1px solid #777;
-}
-
-table {
-	margin-top: 10px;
-}
-
-td.title {
-	text-align: center;
-}
-
-td {
-	padding: 5px;
-}
-tr.even {
-	background: #e8e8e8;
-}
-
-td.final {
-	border-top: 1px solid #777;
 }
 
 /*-------------------------New Users-------------------------*/

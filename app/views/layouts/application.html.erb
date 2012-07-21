@@ -7,21 +7,27 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<div class="container_12">
-	<div class="grid_12">
-		<div id="header">
+<div class="container">
+	<div class="row">
+		<div id="header" class="twelve columns">
 			<h1><a href="/">Reffy</a></h1>
 		</div>
 	</div>
-	<div class="clear"></div>
-	<div class="grid_8">
-		<ul id="navigation" class="<%= @reporting ? "reporting" : "enquiries" %>">
+
+<div class="row">
+	<div id="navigation" class="twelve columns">
+		<ul class="nav-bar" class="<%= @reporting ? "reporting" : "enquiries" %>">
 			<li><%= link_to "Enquiries", enquiries_path, :class => "enquiries" %></li>
 			<li><%= link_to "Reports", reporting_enquiries_path, :class => "reporting" %></li>
 		</ul>
+		</div>
+		</div>
+		<div class="row">
+		<div id="content" class="eight columns">
 		<%= yield %>
 	</div>
-	<div class="grid_4">
+	
+	<div class="four columns">
 		<div class="key">
 		<h4>Input Key</h4>
 		*enquiry type
@@ -36,8 +42,8 @@
 		<br />
 		1 day (8 hours)
 		</div>
-		<h3>Recent Projects</h3>
-		<ul class="projects">
+		<h3>Recent Subjects</h3>
+		<ul class="subjects">
 		<% Enquiry.project_counts.each do |project| %>
 			<li><a href="<%= reporting_enquiries_path(:project => project.name) %>" class="project important"><%= project %></a> (<%= hours_for(project) %>)</li>
 		<% end %>
@@ -57,11 +63,11 @@
 		<% end %>
 		</ul>
 	</div>
-
+</div>
 	<div class="grid_12" id="footer">
 		Based on Punchy which was created by <a href="http://www.mazondo.com">Ryan Quinn</a>
 		<br />
-		<a href="http://www.opensourcerails.com/projects/607989-Enquiryy" title="Open Source Rails">See Punchy on Open Source Rails</a> | <a href="http://www.github.com/katel/Reffy">Reffy on Github</a>
+		<a href="http://www.opensourcerails.com/projects/607989-Punchy" title="Open Source Rails">See Punchy on Open Source Rails</a> | <a href="http://www.github.com/katel/Reffy">Reffy on Github</a>
 		
 	</div>
 </div>
