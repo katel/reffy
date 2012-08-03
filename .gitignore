@@ -1,6 +1,11 @@
 .bundle
+.sass-cache/
+public/assets/
 db/*.sqlite3
 log/*.log
 tmp/**/*
 db/schema.rb
+.idea/workspace.xml
+**/.idea/workspace.xml
+.DS_Store
 Gemfile.lock
