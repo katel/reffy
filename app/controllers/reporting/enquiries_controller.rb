@@ -1,9 +1,11 @@
 class Reporting::EnquiriesController < ApplicationController
-	
 ###############################################
-# Enquiryy
-# Please submit bug reports/suggestions via the github repo http://github.com/mazondo/Enquiryy
-# 
+
+# Please submit bug reports/suggestions via the github repo http://github.com/katel/reffy
+# All the hard yard done by Ryan Quinn
+
+
+
 # Copyright (c) 2010 Ryan Quinn
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,6 +30,7 @@ class Reporting::EnquiriesController < ApplicationController
   # GET /enquiries
   # GET /enquiries.xml
   def index
+    @enquiries = current_user.enquiries
   	@reporting = true
     @enquiries = Enquiry
     if params[:from]

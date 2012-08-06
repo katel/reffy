@@ -7,7 +7,7 @@
 //= require jquery
 //= require jquery-1.4.2.min
 //= require jquery_ujs
-//= require foundation
+
 //= require rails
 //= require_tree .
 

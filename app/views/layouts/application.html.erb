@@ -17,17 +17,25 @@
 <div class="row">
 	<div id="navigation" class="twelve columns">
 		<ul class="nav-bar" class="<%= @reporting ? "reporting" : "enquiries" %>">
+			
+			<li><%= link_to 'Reffy homepage', root_url(:host => request.domain) %></li>
+
 			<li><%= link_to "Enquiries", enquiries_path, :class => "enquiries" %></li>
 			<li><%= link_to "Reports", reporting_enquiries_path, :class => "reporting" %></li>
+			<%= render 'devise/menu/registration_items' %>
+			  <%= render 'devise/menu/login_items' %>
 		</ul>
 		</div>
+		
 		</div>
 		<div class="row">
 		<div id="content" class="eight columns">
+			<p class="notice"><%= notice %></p>
+		       <p class="alert"><%= alert %></p>
 		<%= yield %>
 	</div>
 	
-	<div class="three columns">
+	<div id ="action-menu" class="three columns">
 		<div class="key">
 		<h4>Input Key</h4>
 		*enquiry type

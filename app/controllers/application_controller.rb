@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  	before_filter :authenticate_user!
 ###############################################
 # Enquiryy
 # Please submit bug reports/suggestions via the github repo http://github.com/mazondo/Enquiryy

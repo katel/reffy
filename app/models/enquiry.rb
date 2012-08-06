@@ -1,6 +1,6 @@
 class Enquiry < ActiveRecord::Base
 	acts_as_taggable_on :subjects, :patrons, :types
-	
+	belongs_to :user
 	validates_presence_of :body
 	
 	default_scope :order => "enquiries.created_at DESC" #this sets the default order to reverse chronological

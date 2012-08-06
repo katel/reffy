@@ -28,6 +28,7 @@ class EnquiriesController < ApplicationController
   # GET /enquiries
   # GET /enquiries.xml
   def index
+    
     @enquiries = Enquiry.all.paginate(:page => params[:page], :per_page => Enquiry.per_page)
     @enquiry = Enquiry.new
 
@@ -69,7 +70,7 @@ class EnquiriesController < ApplicationController
   # POST /enquiries.xml
   def create
     @enquiry = Enquiry.new(params[:enquiry])
-
+    @enquiry.user = current_user 
     respond_to do |format|
       if @enquiry.parse_and_save
         format.html { redirect_to(enquiries_path, :notice => 'Enquiry was successfully created.') }
@@ -136,4 +137,6 @@ class EnquiriesController < ApplicationController
   		format.js { render :json => @tags}
   	end
   end
+  
+  
 end

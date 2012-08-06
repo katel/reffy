@@ -12,6 +12,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'devise'
 
 # Bundle edge Rails instead:
 

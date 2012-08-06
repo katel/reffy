@@ -1,5 +1,15 @@
 Timish::Application.routes.draw do
 
+match '/' => 'profiles#show', :constraints => { :subdomain => /.+/ } 
+
+  # get "profiles/show"
+
+  devise_for :users
+  resources :users, :only => :show
+  constraints(Subdomain) do
+    match '/' => 'profiles#show'
+  end
+
   resources :enquiries do
   	collection do
   		get :autocomplete

@@ -15,12 +15,14 @@
 
 /* Colour scheme info 
 
-Nav-bar 594f4f
-Enquiry type 45ada8
-Subjects 9de0ad
-Patrons e5fcc2
+Nav-bar 020203
+Enquiry type f5f649
+Subjects f5f649
+Patrons f5f649
 
-Other 547980
+Header 52c4ed
+Today efffff
+4ef3f2
 http://www.colourlovers.com/palette/443995/i_demand_a_pancake
 
 */
@@ -35,20 +37,28 @@ http://www.colourlovers.com/palette/443995/i_demand_a_pancake
 }
 #header h1 a{
 	text-decoration: none;
-	color: #202020;
+	color: #52C4ED;
 	padding: 10px;
 	margin-left: 85px;
 }
 
-#header h1 a:hover {
-	background-color: #f5f4ef;
+#header h1 a:hover,  {
+	color: #4EF3F2;
+}
+
+h3,h4 {
+	color: #52C4ED;
 }
 
 
 .nav-bar {
 	
-background: none repeat scroll 0 0 #594F4F !important;
+background: none repeat scroll 0 0 #020203 !important;
 
+}
+
+.nav-bar :hover {
+	background-color: #52C4ED;
 }
 
 #footer {
@@ -69,6 +79,9 @@ a img {
 	border: none;
 }
 
+#action-menu {
+	background-color: #efffff;
+}
 /*-------------------------------------------Enquiries-----------------------------------------*/
 
 #new_enquiry {
@@ -77,14 +90,15 @@ a img {
 }
 
 #advanced_menu {
-	background: #e8e8e8;
-	padding: 5px;
+	background: #efffff;
+	padding: 10px;
 }
 
 #show_advanced_menu {
+	background-color: #52C4ED;
 	float: right;
 	font-size: .8em;
-	padding: 2px 5px;
+	padding: 3px 5px;
 }
 .date {
 	font-style: italic;
@@ -105,11 +119,11 @@ a img {
 }
 
 .today {
-	background: #547980	;
+	background: #EFFFFF	;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
-	color: #fff !important;
+	color: #000 !important;
 }
 
 .enquiry_control {
@@ -127,9 +141,9 @@ a img {
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	color: #fff;
+	color: #000;
 	text-decoration: none;
-	background: #45ADA8;
+	background: #F5F649;
 }
 
 h2.important {
@@ -139,7 +153,7 @@ h2.important {
 
 h2.important a {
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 }
 
 h2.important a.home {
@@ -151,20 +165,20 @@ h2.important a.home {
 }
 
 .type {
-	background:#45ADA8;
+	background:#F5F649;
 }
 
 .subject {
-	background: #9DE0AD;
+	background: #F5F649;
 }
 
 .patron  {
-	background: #E5FCC2;
-	color: #555 !important;
+	background: #F5F649;
+	color: #000 !important;
 }
 
 .type a{
-	background: #547980;
+	background: #F5F649;
 	text-decoration: none;
 
 }
@@ -218,7 +232,7 @@ h2.important a.home {
 
 .drop_down a {
 	background-image: none;
-	color:#fff;
+	color:#000;
 	display:block;
 	padding:2px 5px;
 	border-bottom:1px solid #161616;
@@ -304,7 +318,7 @@ h2.important a.home {
 a.more_button {
 	padding: 5px;
 	display: block;
-	background: #fff;
+	background: #000;
 	border: 2px solid #e98115;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
