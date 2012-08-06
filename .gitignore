@@ -5,7 +5,8 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 db/schema.rb
-.idea/workspace.xml
+
+.idea/
 **/.idea/workspace.xml
 .DS_Store
 Gemfile.lock
