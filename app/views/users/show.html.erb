@@ -1,0 +1,10 @@
+<h1>Users#show</h1>
+
+	
+	<% if @user && @user.errors.any? %>
+	
+<%= @users.each do |user |%>
+<p>User: <%= @user.name %></p>
+<li><%= link_to "Profile", root_url(:subdomain => @user.name), root_url(:subdomain => @user.name) %>
+	<% end %>
+<% end %>
